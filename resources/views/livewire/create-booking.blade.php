@@ -1,10 +1,10 @@
 <div class="bg-gray-100 max-w-sm mx-auto m-6 p-5 rounded-lg">
     <form wire:submit.prevent="createBooking">
         <div class="mb-6">
-            <label for="service" class="inline-block text-gray-700 font-bold mb-2">Select Service</label>
+            <label for="service" class="inline-block text-gray-700 font-bold mb-2">Select Gas</label>
             <select name="service" id="service" class="bg-white h-10 w-full border-none rounded-lg" 
             wire:model = "state.service">
-                <option value="">Select a service</option>
+                <option value="">Select Gas</option>
                 @foreach($services as $service)
                 <option value="{{ $service->id}}">{{$service->name }} ({{$service->duration}} minutes)</option>
                 @endforeach
@@ -50,6 +50,18 @@
                     wire:model.defer="state.name">
 
                     @error('state.name')
+                        <div class="font-semibold text-red-500 text-sm mt-2">
+                        {{$message}}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="inline-block text-gray-700 font-bold mb-2">Your Phone</label>
+                    <input type="text" name="phone" id="phone" class="bg-white h-10 w-full border-none rounded-lg"
+                    wire:model.defer="state.phone">
+
+                    @error('state.email')
                         <div class="font-semibold text-red-500 text-sm mt-2">
                         {{$message}}
                         </div>

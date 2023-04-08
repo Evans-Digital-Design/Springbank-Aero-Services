@@ -31,8 +31,10 @@ include("functions.php");
 
 <head>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="assets/slider/ism/css/my-slider.css"/>
+    <script src="assets/slider/ism/js/ism-2.2.min.js"></script>
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="./index.js"></script>
+    <script src="index.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -107,8 +109,9 @@ include("functions.php");
 
         </nav>
         </div>
-        <header class="header">
+        <div class="header">
             <!-- <img class="header__background--img" src="./assets/airstrip.webp" alt=""> -->
+
             <div class="info__content bg-primary bg-opacity-50 ">
                 <ul class="info__list">
                     <li class="info__item">Identifier: CYBW</li>
@@ -119,6 +122,21 @@ include("functions.php");
                     <li class="info__item">UNICOM: 123.4</li>
                 </ul>
             </div>
+
+            <div class="ism-slider" data-transition_type="fade" data-play_type="loop" id="my-slider">
+                <ol>
+                    <li>
+                    <img src="assets/slider/ism/image/slides/aircraft-479772_1280.jpg">
+                    </li>
+                    <li>
+                    <img src="assets/slider/ism/image/slides/beautiful-701678_1280.jpg">
+                    </li>
+                    <li>
+                    <img src="assets/slider/ism/image/slides/summer-192179_1280.jpg">
+                    </li>
+                </ol>
+            </div>
+
             <div class="header__content">
                 <h1 class="header__title"><b class="blue">Springbank</b> Aero <b class="blue">Services</b></h1>
                 <div class="border border-white border-opacity-25  shadow-none p-3 mb-5 bg-primary rounded bg-opacity-25 d-flex flex-column align-items-center ">
@@ -130,7 +148,10 @@ include("functions.php");
                     </a>
                 </div>
             </div>
-        </header>
+
+
+
+</div>
         <section id="about-us">
             <h2 class="about-us__title">About Us</h2>
             <div class="about-us--content">
@@ -200,7 +221,7 @@ include("functions.php");
 </body>
 <footer>
     <div class="container">
-        <div class="row footer__row">
+        <div class="footer__row">
             <figure class="footer__logo--img-wrapper">
                 <a href="#"><img src="./assets/springbank-white.png" class="footer__logo--img" alt="">
             </a>

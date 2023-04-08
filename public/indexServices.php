@@ -196,10 +196,14 @@ $user_data2 = mysqli_fetch_assoc($result2);
             </div>
                 <div class="footer__contact--wrapper">
                 <h3 class="footer__contact--title">Contact Us</h3>
-                <p class="footer__contact--para">Main Line: (403) 247-8833
+                <p class="footer__contact--para">Main Line:
                 </p>
-                <p class="footer__contact--para">Direct Fuel line: (403) 466-8834</p>
+                <p class="footer__contact--para">(403) 247-8833
+                </p>
+                <p class="footer__contact--para">Direct Fuel line:</p>
+                <p class="footer__contact--para">(403) 466-8834</p>
                 </div>
+
                 <div class="footer__location--wrapper">
                     <h3 class="footer__location--title">Location</h3>
                     <p class="footer__location--para">208A Avro Lane Calgary, Alberta T3Z 3S5</p>
