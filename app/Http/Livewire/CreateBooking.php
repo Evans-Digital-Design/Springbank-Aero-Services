@@ -20,7 +20,10 @@ class CreateBooking extends Component
         'employee' => '',
         'time' => '',
         'name' => '',
-        'email' => ''
+        'email' => '',
+        'phone' => '',
+        'location' => '',
+        'identifier' => ''
 
     ];
 
@@ -36,7 +39,10 @@ class CreateBooking extends Component
             'state.employee' => 'required|exists:employees,id',
             'state.time' => 'required|numeric',
             'state.name' => 'required|string',
-            'state.email' => 'required|string'
+            'state.email' => 'required|string',
+            'state.phone' => 'required|string',
+            'state.location' => 'required|string',
+            'state.identifier' => 'required|string'
             
         ];
     }
@@ -57,6 +63,9 @@ class CreateBooking extends Component
                 ->toTimeString(),
             'client_name' => $this->state['name'],
             'client_email' => $this->state['email'],
+            'client_phone' => $this->state['phone'],
+            'aircraft_location' => $this->state['location'],
+            'aircraft_identifier' => $this->state['identifier'],
         ];
 
         

@@ -17,6 +17,9 @@ class Appointment extends Model
         'end_time',
         'client_name',
         'client_email',
+        'client_phone',
+        'aircraft_location',
+        'aircraft_identifier',
         'cancelled_at'
     ];
 

@@ -24,6 +24,9 @@ return new class extends Migration
             $table->time('end_time');
             $table->string('client_name');
             $table->string('client_email');
+            $table->string('client_phone');
+            $table->string('aircraft_location');
+            $table->string('aircraft_identifier');
             $table->timestamps();
         });
     }

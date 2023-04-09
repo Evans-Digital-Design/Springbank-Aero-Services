@@ -57,11 +57,11 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="email" class="inline-block text-gray-700 font-bold mb-2">Your Phone</label>
+                    <label for="phone" class="inline-block text-gray-700 font-bold mb-2">Your Phone</label>
                     <input type="text" name="phone" id="phone" class="bg-white h-10 w-full border-none rounded-lg"
                     wire:model.defer="state.phone">
 
-                    @error('state.email')
+                    @error('state.phone')
                         <div class="font-semibold text-red-500 text-sm mt-2">
                         {{$message}}
                         </div>
@@ -74,6 +74,30 @@
                     wire:model.defer="state.email">
 
                     @error('state.email')
+                        <div class="font-semibold text-red-500 text-sm mt-2">
+                        {{$message}}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="inline-block text-gray-700 font-bold mb-2">Aircraft Location</label>
+                    <input type="text" name="location" id="location" class="bg-white h-10 w-full border-none rounded-lg"
+                    wire:model.defer="state.location">
+
+                    @error('state.location')
+                        <div class="font-semibold text-red-500 text-sm mt-2">
+                        {{$message}}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="mb-3">
+                    <label for="identifier" class="inline-block text-gray-700 font-bold mb-2">Aircraft Identifier</label>
+                    <input type="text" name="identifier" id="identifier" class="bg-white h-10 w-full border-none rounded-lg"
+                    wire:model.defer="state.identifier">
+
+                    @error('state.identifier')
                         <div class="font-semibold text-red-500 text-sm mt-2">
                         {{$message}}
                         </div>
