@@ -152,7 +152,7 @@ $post_result = mysqli_num_rows($result3);
                     
                 </figure>
                 <figure class="modal__media">
-                    <a href="">
+                    <a href="tel:403-247-8833">
                         <img class="modal__media--img" src="./assets/phone.png" alt="Phone">
                     </a>
                     

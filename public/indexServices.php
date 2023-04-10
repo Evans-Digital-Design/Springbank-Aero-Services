@@ -60,7 +60,7 @@ $user_data2 = mysqli_fetch_assoc($result2);
                 link__hover-effect--black">Services</a>
             </li>
             <li class="nav__link">
-                <a href="#" class="
+                <a href="detailing.html" class="
                  nav__link--anchor
                  link__hover-effect
                  link__hover-effect--black">Detailing</a>
@@ -129,6 +129,7 @@ $user_data2 = mysqli_fetch_assoc($result2);
                 <li class="services__list--item">Fuel prices</li>
                 <li class="services__list--item">Map Link</li>
             </ul>
+            <a href="/bookings/create"><button class="booking__btn">Book fuel</button></a>
         </section>
         <section id="fuelPrices">
             <h2 class="fuelPrices__title">Fuel Prices</h2>
@@ -186,7 +187,7 @@ $user_data2 = mysqli_fetch_assoc($result2);
                     
                 </figure>
                 <figure class="modal__media">
-                    <a href="">
+                    <a href="tel:403-247-8833">
                         <img class="modal__media--img" src="./assets/phone.png" alt="Phone">
                     </a>
                     

@@ -221,9 +221,9 @@ padding-left: 24px;
 
 .contact__info{
     display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 0 auto;
+
+    width: 50%;
+
     justify-content: center;
     flex-direction: column;
 }
@@ -235,6 +235,14 @@ padding-left: 24px;
     margin: 24px 0;
 }
 
+.contact_page{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+   
+}
 
 
 
@@ -243,6 +251,7 @@ padding-left: 24px;
     padding-bottom:56.25%;
     position:relative;
     height:0;
+    width: 50%;
     
 }
 
@@ -493,6 +502,7 @@ footer{
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
     }
 
     .contact__info--hours{
@@ -501,6 +511,15 @@ footer{
 
     .contact__info--phone{
         text-align: center;
+    }
+
+    .contact_page{
+        flex-direction: column;
+    }
+
+    .googleMap{
+        width: 100%;
+        
     }
 
 } 

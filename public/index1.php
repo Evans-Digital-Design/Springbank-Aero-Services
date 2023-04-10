@@ -88,9 +88,9 @@ include("functions.php");
                 </li>
                 <li class="nav__link">
                     <a href="/bookings/create" class="
-                    nav__link--anchor
+                    
 
-                    service__btn">Book fuel</a>
+                    booking-btn">Book fuel</a>
                 </li>
             </ul>
             
@@ -227,7 +227,7 @@ include("functions.php");
     </div>
 </body>
 <footer>
-    <div class="container">
+    <div class="footer_cant">
         <div class="footer__row">
             <figure class="footer__logo--img-wrapper">
                 <a href="#"><img src="./assets/springbank-white.png" class="footer__logo--img" alt="">
@@ -253,7 +253,7 @@ include("functions.php");
                     
                 </figure>
                 <figure class="modal__media">
-                    <a href="">
+                    <a href="tel:403-247-8833">
                         <img class="modal__media--img" src="./assets/phone.png" alt="Phone">
                     </a>
                     

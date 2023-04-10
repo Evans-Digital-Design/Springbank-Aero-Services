@@ -188,7 +188,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                     
                 </figure>
                 <figure class="modal__media">
-                    <a href="">
+                    <a href="tel:403-247-8833">
                         <img class="modal__media--img" src="./assets/phone.png" alt="Phone">
                     </a>
                     
