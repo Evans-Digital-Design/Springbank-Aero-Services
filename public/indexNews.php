@@ -68,6 +68,12 @@ $post_result = mysqli_num_rows($result3);
                 link__hover-effect
                 link__hover-effect--black">Contact Us</a>
             </li>
+            <li class="nav__link">
+                    <a href="#" class="
+                    nav__link--anchor
+
+                    service__btn">Book fuel</a>
+                </li>
         </ul>
 
         <button class="btn__menu b" onclick="openMenu()">
