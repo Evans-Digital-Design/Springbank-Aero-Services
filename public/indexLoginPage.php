@@ -123,6 +123,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                     <li><a href="#" class="menu__link menu__link--a">Detailing</a></li>
                     <li><a href="./indexNews.html" class="menu__link menu__link--a">News & Events</a></li>
                     <li><a href="./indexContact.html" class="menu__link menu__link--a">Contact Us</a></li>
+                    <li><a href="./indexContact.html" class="menu__link menu__link--a">Book fuel</a></li>
                     <li><a href="indexLoginPage.php" class="menu__link menu__link--a ">Login</a></li>
                 </ul>
             </div>
