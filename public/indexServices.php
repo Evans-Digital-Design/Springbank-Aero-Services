@@ -78,7 +78,7 @@ $user_data2 = mysqli_fetch_assoc($result2);
                 link__hover-effect--black">Contact Us</a>
             </li>
             <li class="nav__link">
-                    <a href="#" class="
+                    <a href="/bookings/create" class="
                     nav__link--anchor
 
                     service__btn">Book fuel</a>
@@ -100,7 +100,7 @@ $user_data2 = mysqli_fetch_assoc($result2);
                 <li><a href="#" class="menu__link menu__link--a">Detailing</a></li>
                 <li><a href="./indexNews.php" class="menu__link menu__link--a">News & Events</a></li>
                 <li><a href="./indexContact.html" class="menu__link menu__link--a">Contact Us</a></li>
-                <li><a href="./indexContact.html" class="menu__link menu__link--a">Book fuel</a></li>
+                <li><a href="/bookings/create" class="menu__link menu__link--a">Book fuel</a></li>
                 <li><a href="./indexLoginPage.php" class="menu__link menu__link--a ">Login</a></li>
             </ul>
         </div>
