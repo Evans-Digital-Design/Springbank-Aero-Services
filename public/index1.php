@@ -69,7 +69,7 @@ include("functions.php");
                     link__hover-effect--black">Services</a>
                 </li>
                 <li class="nav__link">
-                    <a href="#" class="
+                    <a href="detailing.html" class="
                      nav__link--anchor
                      link__hover-effect
                      link__hover-effect--black">Detailing</a>
@@ -106,7 +106,7 @@ include("functions.php");
                     <li><a href="./index1.php" class="menu__link menu__link--a">Home</a></li>
                     <li><a href="./indexAbout.html" class="menu__link menu__link--a">About</a></li>
                     <li><a href="./indexServices.php" class="menu__link menu__link--a">Services</a></li>
-                    <li><a href="#" class="menu__link menu__link--a">Detailing</a></li>
+                    <li><a href="detailing.html" class="menu__link menu__link--a">Detailing</a></li>
                     <li><a href="./indexNews.php" class="menu__link menu__link--a">News & Events</a></li>
                     <li><a href="./indexContact.html" class="menu__link menu__link--a">Contact Us</a></li>
                     <li><a href="/bookings/create" class="menu__link menu__link--a">Book fuel</a></li>
@@ -269,11 +269,11 @@ include("functions.php");
                 ">Admin Login</a>
             </div>
             <div class="footer__booking--wrapper">
-                <a href="#" class="
+                <a href="/bookings/create" class="
                 footer__booking--link
                 link__hover-effect
                 link__hover-effect--white
-                ">Book with Us !</a>
+                ">Book with Us</a>
             </div>
                 <div class="footer__contact--wrapper">
                 <h3 class="footer__contact--title">Contact Us</h3>

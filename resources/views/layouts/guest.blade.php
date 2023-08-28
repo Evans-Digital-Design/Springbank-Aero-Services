@@ -11,9 +11,9 @@
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
         <link rel="stylesheet" href="{{ asset('styles.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+       
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/css/styles.css'])
         <script src="{{ asset('index.js')}}"></script>
 
 
@@ -33,40 +33,46 @@
                 </figure>
                 <ul class="nav__link--list">
                     <li class="nav__link">
-                        <a href="./index1.php" class="
+                        <a href="{{ asset('index1.php') }}" class="
                         nav__link--anchor
                         link__hover-effect
                         link__hover-effect--black">Home</a>
                     </li>
                     <li class="nav__link">
-                        <a href="./indexAbout.html" class="
+                        <a href="{{ asset('indexAbout.html') }}" class="
                         nav__link--anchor
                         link__hover-effect
                         link__hover-effect--black">About</a>
                     </li>
                     <li class="nav__link">
-                        <a href="./indexServices.php" class="
+                        <a href="{{ asset('indexServices.php') }}" class="
                         nav__link--anchor
                         link__hover-effect
                         link__hover-effect--black">Services</a>
                     </li>
                     <li class="nav__link">
-                        <a href="#" class="
+                        <a href="{{ asset('detailing.html')}}" class="
                          nav__link--anchor
                          link__hover-effect
                          link__hover-effect--black">Detailing</a>
                     </li>
                     <li class="nav__link">
-                        <a href="./indexNews.php" class="
+                        <a href="{{ asset('indexNews.php') }}" class="
                         nav__link--anchor
                         link__hover-effect
                         link__hover-effect--black">News & Events</a>
                     </li>
                     <li class="nav__link">
-                        <a href="./indexContact.html" class="
+                        <a href="{{ asset('indexContact.html') }}" class="
                         nav__link--anchor
                         link__hover-effect
                         link__hover-effect--black">Contact Us</a>
+                    </li>
+                    <li class="nav__link">
+                        <a href="/bookings/create" class="
+                        
+    
+                        booking-btn">Book fuel</a>
                     </li>
                 </ul>
                 
@@ -79,13 +85,13 @@
                         <i class="fa fa-times"></i>
                     </button>
                     <ul class="menu__links">
-                        <li><a href="./index1.php" class="menu__link menu__link--a">Home</a></li>
-                        <li><a href="./indexAbout.html" class="menu__link menu__link--a">About</a></li>
-                        <li><a href="./indexServices.php" class="menu__link menu__link--a">Services</a></li>
-                        <li><a href="#" class="menu__link menu__link--a">Detailing</a></li>
-                        <li><a href="./indexNews.php" class="menu__link menu__link--a">News & Events</a></li>
-                        <li><a href="./indexContact.html" class="menu__link menu__link--a">Contact Us</a></li>
-                        <li><a href="indexLoginPage.php" class="menu__link menu__link--a ">Login</a></li>
+                        <li><a href="{{ asset('index1.php') }}" class="menu__link menu__link--a">Home</a></li>
+                        <li><a href="{{ asset('indexAbout.html') }}" class="menu__link menu__link--a">About</a></li>
+                        <li><a href="{{ asset('indexServices.php') }}" class="menu__link menu__link--a">Services</a></li>
+                        <li><a href="{{ asset('detailing.html')}}" class="menu__link menu__link--a">Detailing</a></li>
+                        <li><a href="{{ asset('indexNews.php') }}" class="menu__link menu__link--a">News & Events</a></li>
+                        <li><a href="{{ asset('indexContact.html') }}" class="menu__link menu__link--a">Contact Us</a></li>
+                        <li><a href="{{ asset('indexLoginPage.php') }}" class="menu__link menu__link--a ">Login</a></li>
                     </ul>
                 </div>
     
@@ -103,7 +109,7 @@
     </body>
 
     <footer>
-        <div class="container">
+        <div class="footer_cant">
             <div class="row footer__row">
                 <figure class="footer__logo--img-wrapper">
                     <a href="#"><img src="{{ asset('assets/springbank-white.png') }}" class="footer__logo--img" alt="">
@@ -149,7 +155,7 @@
                     footer__booking--link
                     link__hover-effect
                     link__hover-effect--white
-                    ">Book with Us !</a>
+                    ">Book with Us</a>
                 </div>
                     <div class="footer__contact--wrapper">
                     <h3 class="footer__contact--title">Contact Us</h3>

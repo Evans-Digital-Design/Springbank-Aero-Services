@@ -191,6 +191,28 @@ nav{
     padding: 8px;
 }
 
+.booking-btn{
+    padding: 14px 29px;
+    line-height: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 3px;
+    background-color: #0071ba;
+    color: #fff;
+    border-color: transparent ;
+    box-shadow: none;
+    transition: all 300ms ease;
+}
+
+.booking-btn:hover{
+    cursor: pointer;
+    background-color: #057bca;
+}
+
+.booking-btn:active{
+    transform: scale(0.98);
+}
+
 
 /* About Us */
 
@@ -252,7 +274,7 @@ padding-left: 24px;
 
 /* FOOTER */
 
-.container{
+.footer_cant{
     padding: 50px 0;
     flex-wrap: wrap;
     display: flex;
@@ -268,7 +290,6 @@ footer{
     /* display: flex; */
     padding: 6% 0;
     position: relative;
-    
 }
 
 
@@ -295,7 +316,7 @@ footer{
     filter: invert(1);
 }
 .modal__media--img:hover{
-    transform: scale(1.05);
+    transform: scale(1.2);
     filter: invert(2);
 }
 
@@ -305,7 +326,7 @@ footer{
     display: flex;
     justify-content: space-between;
     margin: 28px 0;
-    transform: translateX(-200px);
+    
 }
 
 .footer__social--link,
@@ -322,6 +343,7 @@ footer{
 .footer__booking--link{
    color: #fff;
    font-weight: 600;
+   text-decoration: none;
 }
 
 .footer__contact--wrapper{
@@ -338,7 +360,7 @@ footer{
 }
 
 .footer__location--wrapper{
-    margin-right: 36px;
+    margin-right: 24px;
     color: #fff;
 }
 
@@ -353,6 +375,7 @@ footer{
     align-items: center;
     margin-top: 24px;
     font-size: 16px;
+    text-align: center;
 }
 
 
@@ -387,7 +410,7 @@ footer{
         justify-content: center;
     }
 
-    .container{
+    .footer_cant{
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -421,10 +444,6 @@ footer{
 
 @media (max-width: 768px){
 
-    #personal-logo{
-        width: 240px;
-    }
-
     footer{
         display: flex;
         justify-content: center;
@@ -436,6 +455,7 @@ footer{
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        flex-direction: row;
     }
 
     .footer__social--link{
@@ -479,6 +499,23 @@ footer{
         align-items: center;
         margin: 0 auto;
         text-align: center;
+    }
+
+    .plans{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .plan{
+        margin: 24px 0;
+        width: 50%;
+    }
+
+    #personal-logo{
+        width: 240px;
     }
 
     .newsAndEvents__calendar{

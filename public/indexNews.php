@@ -51,13 +51,13 @@ $post_result = mysqli_num_rows($result3);
                 link__hover-effect--black">Services</a>
             </li>
             <li class="nav__link">
-                <a href="#" class="
+                <a href="detailing.html" class="
                  nav__link--anchor
                  link__hover-effect
                  link__hover-effect--black">Detailing</a>
             </li>
             <li class="nav__link">
-                <a href="./indexNews.html" class="
+                <a href="./indexNews.php" class="
                 nav__link--anchor
                 link__hover-effect
                 link__hover-effect--black">News & Events</a>
@@ -70,9 +70,9 @@ $post_result = mysqli_num_rows($result3);
             </li>
             <li class="nav__link">
                     <a href="/bookings/create" class="
-                    nav__link--anchor
+                    
 
-                    service__btn">Book fuel</a>
+                    booking-btn">Book fuel</a>
                 </li>
         </ul>
 
@@ -88,7 +88,7 @@ $post_result = mysqli_num_rows($result3);
                 <li><a href="./index1.php" class="menu__link menu__link--a">Home</a></li>
                 <li><a href="./indexAbout.html" class="menu__link menu__link--a">About</a></li>
                 <li><a href="./indexServices.php" class="menu__link menu__link--a">Services</a></li>
-                <li><a href="#" class="menu__link menu__link--a">Detailing</a></li>
+                <li><a href="detailing.html" class="menu__link menu__link--a">Detailing</a></li>
                 <li><a href="./indexNews.html" class="menu__link menu__link--a">News & Events</a></li>
                 <li><a href="./indexContact.html" class="menu__link menu__link--a">Contact Us</a></li>
                 <li><a href="/bookings/create" class="menu__link menu__link--a">Book fuel</a></li>
@@ -160,12 +160,19 @@ $post_result = mysqli_num_rows($result3);
             </div>
             </div>
             <div class="footer__social--list">
+            <div class="footer__booking--wrapper">
+                    <a href="indexLoginPage.php" class="
+                    footer__booking--link
+                    link__hover-effect
+                    link__hover-effect--white
+                    ">Admin Login</a>
+                </div>
                 <div class="footer__booking--wrapper">
                 <a href="#" class="
             footer__booking--link
             link__hover-effect
             link__hover-effect--white
-            ">Book with Us !</a>
+            ">Book with Us</a>
             </div>
                 <div class="footer__contact--wrapper">
                 <h3 class="footer__contact--title">Contact Us</h3>
