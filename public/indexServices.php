@@ -112,24 +112,35 @@ $user_data2 = mysqli_fetch_assoc($result2);
             <h2 class="services__title">Services</h2>
             <ul class="services__list">
                 <li class="services__list--item">
-                    Fuel and Additives (Avgas/ Jet A 1/ FSII) from Mobile Refuellers</li>
-                <li class="services__list--item">Various Aviation Oils</li>
-                <li class="services__list--item">Oxygen Service</li>
-                <li class="services__list--item">Flight Service Station</li>
-                <li class="services__list--item">Aircraft Tie Downs</li>
-                <li class="services__list--item">Aircraft Hangarage</li>
-                <li class="services__list--item">Passenger lounge</li>
-                <li class="services__list--item">Rest rooms</li>
-                <li class="services__list--item">Car rentals</li>
-                <li class="services__list--item">Admin Services, Fax, Telephone, Photocopying</li>
-                <li class="services__list--item">Free Wi-Fi access</li>
-                <li class="services__list--item">Vending machine</li>
-                <li class="services__list--item">On request customs</li>
-                <li class="services__list--item">Hours of operation</li>
-                <li class="services__list--item">Fuel prices</li>
-                <li class="services__list--item">Map Link</li>
+                    Fuel Services</li>
+                <li class="services__list--item">- Avgas 100LL</li>
+                <li class="services__list--item">- Jet A-1</li>
+                <li class="services__list--item">- Jet A-1 +</li>
+                <a href="/bookings/create"><button class="booking__btn">Book fuel</button></a>
+                <br>
+                <br>
+                <li class="services__list--item">Ramp Parking (Daily and Monthly)</li>
+                <li class="services__list--item">Hangar Parking (Daily and Monthly)</li>
+                <br>
+                <li class="services__list--item">Aviation Oil</li>
+                <li class="services__list--item">- 15W50</li>
+                <li class="services__list--item">- 20W50</li>
+                <li class="services__list--item">- W80</li>
+                <li class="services__list--item">- W100</li>
+                <br>
+                <li class="services__list--item">Aviation Oxygen</li>
+                <li class="services__list--item">Aircraft Towing and Recovery</li>
+                <li class="services__list--item">Plug IN</li>
+                <li class="services__list--item">GPU</li>
+                <li class="services__list--item">LAV</li>
+                <li class="services__list--item">Call out(in effect for services requested outside operating hours) $150</li>
+                <br>
+                <li class="services__list--item">Congierce Services (Travel Arrangements, Catering Arrangements)</li>
+                <li class="services__list--item">Detailing</li>
+                <li class="services__list--item">Snow Removal</li>
+                <li class="services__list--item">Rental Cars (Drop off location for Enterprise)</li>
             </ul>
-            <a href="/bookings/create"><button class="booking__btn">Book fuel</button></a>
+            
         </section>
         <section id="fuelPrices">
             <h2 class="fuelPrices__title">Fuel Prices</h2>

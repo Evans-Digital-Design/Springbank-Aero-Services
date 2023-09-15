@@ -61,7 +61,7 @@ $user_dat = check_login($con);
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.108.0">
-    <title>Dashboard Template · Bootstrap v5.3</title>
+    <title>Admin Fuel Prices</title>
 
     <script src="js/jquery.min.js"></script>
     
@@ -176,7 +176,7 @@ $user_dat = check_login($con);
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="index1.php">
             <i class="bi bi-house-fill"></i>
               Home Page
             </a>

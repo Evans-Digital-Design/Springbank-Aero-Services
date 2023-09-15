@@ -13,7 +13,7 @@ include("functions.php");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     
-    <title>Dashboard Template · Bootstrap v5.3</title>
+    <title>Admin Post</title>
 
    
 
@@ -130,7 +130,7 @@ include("functions.php");
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="index1.php">
             <i class="bi bi-house-fill"></i>
               Home Page
             </a>

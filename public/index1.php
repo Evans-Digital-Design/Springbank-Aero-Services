@@ -176,15 +176,15 @@ include("functions.php");
 
         <section id="events">
             <h2 class="events__title">News & Events</h2>
-            <div class="row mb-2 d-flex align-items-center flex-column ">
+            <div style="width: 100%; max: width 1200px;" class="row mb-2 d-flex align-items-center flex-row ">
             
             <?php
 
-                   for($i=0; $i<$post_result; $i++) {
+                   for($i=1; $i<$post_result; $i++) {
                     $row = mysqli_fetch_assoc($result3);
-                    echo "<div class=\"col-md-6\">
+                    echo "<div class=\"col-md-4 \">
                     <div class=\"row g-0 border 
-                    rounded overflow-hidden flex-md-row 
+                    rounded overflow-hidden flex-md-row w-100
                     m-auto mb-4 shadow-sm h-md-250 position-relative\">
                     <div class=\"col p-4 d-flex flex-column bg-white position-static\">
                     <h3 class=\"mb-0\">". $row['title'] . "</h3>
@@ -197,7 +197,19 @@ include("functions.php");
                     ?>
             </div>
         </section>
+        <!-- for($i=0; $i<$post_result; $i++) {
+                    $row = mysqli_fetch_assoc($result3);
+                    echo "<div class=\"col-md-4\">
+                    <div class=\"row g-0 border 
+                    rounded overflow-hidden flex-md-row 
+                    m-auto mb-4 shadow-sm h-md-250 position-relative\">
+                    <div class=\"col p-4 d-flex flex-column bg-white position-static\">
+                    <h3 class=\"mb-0\">". $row['title'] . "</h3>
+                    <div class=\"mb-1 text-muted\">" . date("jS M, Y",strtotime($row['date'])) . "</div>
+                    <p class=\"mb-auto\">" . $row['content'] . 
+                    "</p></div></div></div>";
 
+                   } -->
         <section id="fuelPrices">
             <h2 class="fuelPrices__title">Fuel Prices</h2>
             <div class="plans">

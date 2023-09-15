@@ -100,7 +100,7 @@ $post_result = mysqli_num_rows($result3);
     <div class="newsNEvent">
     <section id="newsAndEvents">
     <h2 class="event__title">News & Events</h2>
-    <div class="row mb-2 d-flex align-items-center flex-column ">
+    <div class="row mb-2 d-flex align-items-center flex-row ">
             
             <?php
 
