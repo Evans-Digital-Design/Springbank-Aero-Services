@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route:: get('/bookings/create', CreateBooking::class);
+Route:: get('/bookings/list', \App\Http\Livewire\BookingList::class);
 Route:: get('/bookings/{appointment:uuid}', ShowBooking::class)->name('bookings.show');
 
 

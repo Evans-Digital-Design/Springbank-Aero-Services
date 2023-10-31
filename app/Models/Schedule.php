@@ -20,4 +20,9 @@ class Schedule extends Model
     {
         return $this->hasMany(ScheduleUnavailability::class);
     }
+
+    public function employee()
+    {
+        return $this->belongsTo(Employee::class,'employee_id','id');
+    }
 }

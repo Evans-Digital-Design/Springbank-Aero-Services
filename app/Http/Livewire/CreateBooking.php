@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Mail\EmployeeBookingMail;
 use Carbon\Carbon;
 use App\Mail\OrderMail;
 use App\Models\Service;
@@ -43,7 +44,7 @@ class CreateBooking extends Component
             'state.phone' => 'required|string',
             'state.location' => 'required|string',
             'state.identifier' => 'required|string'
-            
+
         ];
     }
 
@@ -68,7 +69,7 @@ class CreateBooking extends Component
             'aircraft_identifier' => $this->state['identifier'],
         ];
 
-        
+
 
         $appointment = Appointment::make($bookingFields);
 
@@ -78,14 +79,21 @@ class CreateBooking extends Component
         $appointment->save();
 
         $this->sendOrderConfirmationMail($appointment);
+        $this->sendOrderConfirmationMailForEmployer($appointment);
 
         return redirect()->to(route('bookings.show', $appointment) . '?token=' . $appointment->token);
     }
 
     public function sendOrderConfirmationMail($appointment)
     {
-        Mail::to('jasneetpalsingh@gmail.com')->send(new OrderMail($appointment));
+        Mail::to('jasneetpalsingh@gmail.com')->queue(new OrderMail($appointment));
     }
+     public function sendOrderConfirmationMailForEmployer($appointment)
+    {
+        Mail::to($appointment->client_email)->queue(new EmployeeBookingMail($appointment));
+    }
+
+
 
     public function setTime($time)
     {
@@ -104,7 +112,7 @@ class CreateBooking extends Component
         $this->state['time'] = '';
 
         $this->employees = $this->selectedService->employees;
-    
+
     }
 
     public function updatedStateEmployee()
