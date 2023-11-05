@@ -133,13 +133,13 @@ include("functions.php");
             <div class="ism-slider" data-transition_type="fade" data-play_type="loop" id="my-slider">
                 <ol>
                     <li>
-                    <img src="assets/slider/ism/image/slides/aircraft-479772_1280.jpg">
+                    <img src="assets/slider/ism/image/slides/waves.jpg">
                     </li>
                     <li>
-                    <img src="assets/slider/ism/image/slides/beautiful-701678_1280.jpg">
+                    <img src="assets/slider/ism/image/slides/plane.jpg">
                     </li>
                     <li>
-                    <img src="assets/slider/ism/image/slides/summer-192179_1280.jpg">
+                    <img src="assets/slider/ism/image/slides/alaska.jpg">
                     </li>
                 </ol>
             </div>
