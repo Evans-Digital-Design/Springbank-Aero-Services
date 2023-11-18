@@ -145,7 +145,12 @@ $post_data = mysqli_fetch_assoc($result);
               Fuel Prices
             </a>
           </li>
-          
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="admin-products.php">
+            <i class="bi bi-bag-dash-fill"></i>
+              Products
+            </a>
+          </li>
         </ul>
 
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">

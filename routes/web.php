@@ -5,6 +5,7 @@ use App\Http\Livewire\ShowBooking;
 use App\Http\Livewire\CreateBooking;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 
 /*
@@ -18,9 +19,7 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/products', ProductController::class)->name('products');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -35,6 +34,8 @@ Route::middleware('auth')->group(function () {
 Route:: get('/bookings/create', CreateBooking::class);
 Route:: get('/bookings/list', \App\Http\Livewire\BookingList::class);
 Route:: get('/bookings/{appointment:uuid}', ShowBooking::class)->name('bookings.show');
+
+// Route:: post('admin-products-add', [ProductController::class, 'insert']);
 
 
 

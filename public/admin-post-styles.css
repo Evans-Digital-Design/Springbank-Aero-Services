@@ -51,6 +51,9 @@
     transition: background 0.2s, border-color 0.2s;
 }
 
+.form-image{
+    width: auto !important;
+}
 /* .form_input-add{
     width: 50%;
 } */

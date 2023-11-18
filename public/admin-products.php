@@ -1,54 +1,7 @@
-
 <?php
-session_start();
 
 include("connection.php");
 include("functions.php");
-
-
-
-
-
-
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    //something was posted
-
-    $price = $_POST['jet_gas_price'];
-    $price2 = $_POST['av_gas_price'];
-
-    if (!empty($price) && is_numeric($price)) {
-
-        //save to database
-        $query = "insert into jet_a1_price (price) values ('$price')";
-        mysqli_query($con, $query);
-    }
-
-
-    if (!empty($price2) && is_numeric($price2)) {
-
-        //save to database
-        $query = "insert into av_gas_price (price) values ('$price2')";
-        mysqli_query($con, $query);
-        
-    }
-
-}
-
-
-$user_dat = check_login($con);
-
-        $query = "SELECT * FROM jet_a1_price ORDER BY id DESC LIMIT 1";
-        $result = mysqli_query($con, $query);
-        $user_data = mysqli_fetch_assoc($result);
-
-        $query2 = "SELECT * FROM av_gas_price ORDER BY id DESC LIMIT 1";
-        $result2 = mysqli_query($con, $query2);
-        $user_data2 = mysqli_fetch_assoc($result2);
-
-
-
-
-
 
 
 ?>
@@ -59,16 +12,17 @@ $user_dat = check_login($con);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.108.0">
-    <title>Admin Fuel Prices</title>
+    
+    <title>Admin Products</title>
 
-    <script src="js/jquery.min.js"></script>
-    
-    
+   
+
 
     
-    <link rel="stylesheet" href="admin-post-styles.css">
+    
+
+    
+
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
 
@@ -151,7 +105,7 @@ $user_dat = check_login($con);
         <ul class="nav flex-column">
           <li class="nav-item">
           <a class="nav-link " aria-current="page" href="admin.php">
-              <i class="bi bi-speedometer"></i> 
+            <i class="bi bi-speedometer"></i> 
               Dashboard
             </a>
             <a class="nav-link " aria-current="page" href="posts.php">
@@ -160,17 +114,18 @@ $user_dat = check_login($con);
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link" aria-current="page" href="admin-fuel-price.php">
             <i class="bi bi-fuel-pump-fill"></i>
               Fuel Prices
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="admin-products.php">
+            <a class="nav-link active" aria-current="page" href="admin-products.php">
             <i class="bi bi-bag-dash-fill"></i>
               Products
             </a>
           </li>
+          
         </ul>
 
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
@@ -193,7 +148,7 @@ $user_dat = check_login($con);
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Fuel Prices</h1>
+        <h1 class="h2">PRODUCTS</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -206,41 +161,66 @@ $user_dat = check_login($con);
         </div>
       </div>
 
+      <button class="btn btn-primary mb-4"><a 
+        class="text-white" 
+        style="text-decoration:none;" 
+        href="admin-products-add.php">Add New</a>
+      </button>
 
-      
-    
-    <div class="col-md 6 mt-4 d-flex align-items-center flex-column">
-        <form method="post" class="form" id="login">
-            <h1 class="form__title">Change Fuel Price</h1>
+      <div class="table-responsive">
+        <table class="table">
+        <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Image</th>
+        <th>Date</th>
+        <th>Action</th>
+        </tr>
 
-            <div class="form__input-group d-flex flex-column align-items-center">
-                <h2 class="price__title">JET A-1 (FSII)</h2>
-                <p class="current__price">Current price: $
-                    <?php if (isset($user_data['price'])): ?>
-                        <?php echo $user_data['price'];?>
-                    <?php endif; ?>
-                </p>
-                <input type="text" class="form__input"  name="jet_gas_price" autofocus placeholder="JET A-1 (FSII)">
-                <div class="form__input-error-message"></div>
+        <?php
+        $query = "select * from products order by id desc";
+        $rows = mysqli_query($con, $query);
+      ?>  
+
+        <?php if(!empty($rows)):?>
+            <?php foreach($rows as $row):?>
+        <tr>
+        <td><?=$row['id']?></td>
+        <td><?=$row['title']?></td>
+        <td><?=$row['description']?></td>
+        <td><?=$row['selling_price']?></td>
+        <td><?=$row['quantity']?></td>
+        <td><?=$row['image']?></td>
+        <td><?=date("jS M, Y",strtotime($row['created_at']))?></td>
+        <td>
+          <a href="posts-edit.php?id=<?=$row['id']?>">
+          <button class="btn btn-warning text-black">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+              <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+            </svg>
+          </button>
+          </a>
+          <a href="posts-delete.php?id=<?=$row['id']?>"><button class="btn btn-danger text-black" >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+            </svg>
+          </button>
+          </a>
+        </td>
+        </tr>
+              <?php endforeach;?>
+          <?php endif;?>
+
             </div>
-            <br>
-            <div class="form__input-group d-flex flex-column align-items-center">
-                <h2 class="price__title">AV GAS 100LL</h2>
-                <p class="current__price">Current price: $
-                    <?php if (isset($user_data2['price'])): ?>
-                        <?php echo $user_data2['price'];?>
-                    <?php endif; ?>
-                </p>
-                <input type="text" class="form__input"  name="av_gas_price" autofocus placeholder="AV GAS 100LL">
-                <div class="form__input-error-message"></div>
-            </div>
-            
-            <div class="form__input-group">
-            <button class="mt-4 btn btn-primary btn-lg d-flex justify-items-center" type="submit" value="price_button" >Change</button>
-            </div>
-        </form>
-    </div>
-    
+            </table>
+
+
+
+
 
       
 
@@ -248,11 +228,11 @@ $user_dat = check_login($con);
     </main>
   </div>
 </div>
+
+
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-    
-
-      
   </body>
 </html>
+

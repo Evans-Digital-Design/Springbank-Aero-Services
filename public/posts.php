@@ -119,6 +119,12 @@ include("functions.php");
               Fuel Prices
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="admin-products.php">
+            <i class="bi bi-bag-dash-fill"></i>
+              Products
+            </a>
+          </li>
           
         </ul>
 
