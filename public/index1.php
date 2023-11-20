@@ -147,7 +147,7 @@ include("functions.php");
             <div class="header__content">
                 <h1 class="header__title"><b class="blue">Springbank</b> Aero <b class="blue">Services</b></h1>
                 <div class="border border-white border-opacity-25  shadow-none p-3 mb-5 bg-primary rounded bg-opacity-25 d-flex flex-column align-items-center ">
-                    <p class="header__para">Safe, Fast, Convient</p>
+                    <p class="header__para">Safe, Fast, Convenient</p>
                     <a href="./indexServices.php">
                         <button class="service__btn">
                             Our Services

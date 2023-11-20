@@ -4,9 +4,12 @@ use App\Mail\ConfirmationMailE;
 use App\Http\Livewire\ShowBooking;
 use App\Http\Livewire\CreateBooking;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CartProductController;
+use App\Http\Controllers\ProductShowController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,11 +38,12 @@ Route:: get('/bookings/create', CreateBooking::class);
 Route:: get('/bookings/list', \App\Http\Livewire\BookingList::class);
 Route:: get('/bookings/{appointment:uuid}', ShowBooking::class)->name('bookings.show');
 
-// Route:: post('admin-products-add', [ProductController::class, 'insert']);
+Route::get('products/{product:title}', [ProductShowController::class, 'show'])->name('products.show');
 
+Route::post('/cart/products/', [CartProductController::class, 'store'])->name('cart.products.store');
+Route::delete('/cart/products/{product:title}', [CartProductController::class, 'destroy'])->name('cart.products.destroy');
 
-
-
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 
 
 

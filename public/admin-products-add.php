@@ -72,7 +72,7 @@ include("functions.php");
 $statusMsg[] = ''; 
 $errors[] = "";
 // File upload directory 
-$targetDir = "assets/products/"; 
+$targetDir = "storage/"; 
  
 if(isset($_POST["submit"])){ 
     if(!empty($_FILES["file"]["name"])){ 
@@ -83,10 +83,9 @@ if(isset($_POST["submit"])){
         
         $title = mysqli_real_escape_string($con, $_POST['title']);
         $description = mysqli_real_escape_string($con, $_POST['description']);
-        $original_price = mysqli_real_escape_string($con, $_POST['original_price']);
-        $tax = mysqli_real_escape_string($con, $_POST['tax']);
         $selling_price = mysqli_real_escape_string($con, $_POST['selling_price']);
         $quantity = mysqli_real_escape_string($con, $_POST['quantity']);
+
 
         // $title = $_POST['title'];
         // $description = $_POST['description'];
@@ -102,9 +101,10 @@ if(isset($_POST["submit"])){
             if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){ 
                 // Insert image file name into database 
                 $insert = $con->query("INSERT INTO products (
-                    title, description, original_price, selling_price,image,tax, quantity) 
+                    title, description, selling_price,image, quantity) 
                 VALUES (
-                    '".$title."','".$description."','".$original_price."','".$selling_price."','".$image."','".$tax."',
+                    '".$title."','".$description."',
+                    '".$selling_price."','".$image."',
                     '".$quantity."')"); 
                 if($insert){ 
                     header("Location: admin-products.php");
@@ -138,13 +138,15 @@ if(isset($_POST["submit"])){
 
 const formatter = new Intl.NumberFormat('en-US', {
    minimumFractionDigits: 2,      
-   maximumFractionDigits: 2,
+   maximumFractionDigits: 4,
 });
 calculate = function()
 {
-    var resources = document.getElementById('og-price').value;
-    var minutes = document.getElementById('tax').value; 
-    document.getElementById('final-price').value = formatter.format(parseFloat(resources)*parseFloat(minutes));
+    var price = document.getElementById('price').value;
+
+    document.getElementById('price').value = formatter.format(parseFloat(price));
+
+    
 }
 </script>
 <!doctype html>
@@ -317,17 +319,7 @@ calculate = function()
         </div>
 
         <div class="form-floating form__input-group ">
-            <input id="og-price" onblur="calculate()" type="text" class="form__input w-50 " name="original_price" autofocus placeholder="Price">
-            <div class="form__input-error-message"></div>
-        </div>
-
-        <div class="form-floating form__input-group ">
-            <input id="tax" type="text" onblur="calculate()" class="form__input w-50 " name="tax" autofocus placeholder="Tax">
-            <div class="form__input-error-message"></div>
-        </div>
-
-        <div class="form-floating form__input-group ">
-            <input readonly id="final-price" type="text" class="form__input w-50 " name="selling_price" autofocus placeholder="Selling Price">
+            <input id="price" onblur=" calculate()" type="text" class="form__input w-50 " name="selling_price" autofocus placeholder="Price ($)">
             <div class="form__input-error-message"></div>
         </div>
 

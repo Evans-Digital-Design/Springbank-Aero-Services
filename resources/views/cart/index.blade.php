@@ -100,29 +100,47 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Products') }}
+            CART
         </h2>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                @foreach ($products as $product)
-                <a href="{{route('products.show', $product)}}" class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
-                    <h1 class="txt-lg font-semibold mb-2">{{$product->title}}</h1>
-                    <figure>
-                    <img class="w-5 " src="{{asset('storage/'.$product->image)}}" alt="">
-                    </figure>
-                    <div>${{$product->selling_price}}</div>
-                    <p>{{$product->description}}</p>
-                </a>
-                
-                @endforeach
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
+                  @if (optional(optional($cart)->products)->count())
+                    @foreach ($cart->products as $product)
+                        <div class="mb-4 pb-4 border-b">
+                            <div class="font-semibold">{{$product->title}}</div>
+
+                            <div>{{$product->selling_price}}</div>
+
+                            <form method="post" action="{{route('cart.products.destroy', $product)}}">
+                                @csrf
+                                @method('DELETE')
+                                <button class="text-indigo-500">Remove</button>
+                            </form>
+                        </div>
+                    @endforeach
+
+                        <div class="mt-4">
+                            <div class="mb-2">Total:{{$cart->totalBefore()}}</div>
+                            <div class="mb-2">Tax:{{$cart->totalTax()}}</div>
+                            <div class="mb-2">Cart total:{{$cart->total()}}</div>
+                            <x-primary-button >
+                                Checkout
+                            </x-primary-button>
+                        </div>
+                @else
+                    <p>Your cart is empty</p>
+                </div>
+                @endif
             </div>
 
         </div>
     </div>
 </x-app-layout>
+
 <footer>
     <div class="footer_cant">
         <div class="row footer__row">

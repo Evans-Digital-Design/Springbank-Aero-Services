@@ -1,21 +1,20 @@
 <?php
 
-// namespace App\Models;
+namespace App\Models;
 
-// use Illuminate\Database\Eloquent\Factories\HasFactory;
-// use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-// class Product extends Model
-// {
-//     use HasFactory;
-//     protected $table = 'products';
-//     protected $fillable = 
-//     [
-//         'title',
-//         'description',
-//         'original_price',
-//         'selling_price',
-//         'image',
-//         'tax',
-//         'quantity'
-//     ];
+class Product extends Model
+{
+    use HasFactory;
+    protected $table = 'products';
+    protected $fillable = 
+    [
+        'title',
+        'description',
+        'selling_price',
+        'image',
+        'quantity'
+    ];
+}

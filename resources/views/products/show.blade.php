@@ -100,24 +100,29 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Products') }}
+            {{ $product->title }}
         </h2>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                @foreach ($products as $product)
-                <a href="{{route('products.show', $product)}}" class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
                     <h1 class="txt-lg font-semibold mb-2">{{$product->title}}</h1>
                     <figure>
                     <img class="w-5 " src="{{asset('storage/'.$product->image)}}" alt="">
                     </figure>
                     <div>${{$product->selling_price}}</div>
                     <p>{{$product->description}}</p>
-                </a>
-                
-                @endforeach
+
+                    <form action="{{route('cart.products.store')}}" method="post">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{$product->id}}">
+                    <x-primary-button class="mt-3">
+                        {{ __('ADD TO CART') }}
+                    </x-primary-button>
+                    </form>
+                </div>
             </div>
 
         </div>
