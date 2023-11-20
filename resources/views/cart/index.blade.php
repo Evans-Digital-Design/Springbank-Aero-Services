@@ -50,12 +50,12 @@
                         link__hover-effect
                         link__hover-effect--black">Services</a>
                     </li>
-                    <li class="nav__link">
+                    {{-- <li class="nav__link">
                         <a href="{{ asset('detailing.html')}}" class="
                          nav__link--anchor
                          link__hover-effect
                          link__hover-effect--black">Detailing</a>
-                    </li>
+                    </li> --}}
                     <li class="nav__link">
                         <a href="{{ asset('indexNews.php') }}" class="
                         nav__link--anchor
@@ -88,7 +88,7 @@
                         <li><a href="{{ asset('index1.php') }}" class="menu__link menu__link--a">Home</a></li>
                         <li><a href="{{ asset('indexAbout.html') }}" class="menu__link menu__link--a">About</a></li>
                         <li><a href="{{ asset('indexServices.php') }}" class="menu__link menu__link--a">Services</a></li>
-                        <li><a href="{{ asset('detailing.html')}}" class="menu__link menu__link--a">Detailing</a></li>
+                        {{-- <li><a href="{{ asset('detailing.html')}}" class="menu__link menu__link--a">Detailing</a></li> --}}
                         <li><a href="{{ asset('indexNews.php') }}" class="menu__link menu__link--a">News & Events</a></li>
                         <li><a href="{{ asset('indexContact.html') }}" class="menu__link menu__link--a">Contact Us</a></li>
                         <li><a href="{{ asset('indexLoginPage.php') }}" class="menu__link menu__link--a ">Login</a></li>
@@ -124,12 +124,11 @@
                     @endforeach
 
                         <div class="mt-4">
-                            <div class="mb-2">Total:{{$cart->totalBefore()}}</div>
-                            <div class="mb-2">Tax:{{$cart->totalTax()}}</div>
+                           
                             <div class="mb-2">Cart total:{{$cart->total()}}</div>
-                            <x-primary-button >
+                            <x-link-button :href="route('checkout.index')" >
                                 Checkout
-                            </x-primary-button>
+                            </x-link-button>
                         </div>
                 @else
                     <p>Your cart is empty</p>
