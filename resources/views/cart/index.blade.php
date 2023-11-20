@@ -113,7 +113,7 @@
                         <div class="mb-4 pb-4 border-b">
                             <div class="font-semibold">{{$product->title}}</div>
 
-                            <div>{{$product->selling_price}}</div>
+                            <div>@money($product->selling_price, 'CAD')</div>
 
                             <form method="post" action="{{route('cart.products.destroy', $product)}}">
                                 @csrf
@@ -125,7 +125,7 @@
 
                         <div class="mt-4">
                            
-                            <div class="mb-2">Cart total:{{$cart->total()}}</div>
+                            <div class="mb-2">Cart total:@money($cart->total(), 'CAD')</div>
                             <x-link-button :href="route('checkout.index')" >
                                 Checkout
                             </x-link-button>

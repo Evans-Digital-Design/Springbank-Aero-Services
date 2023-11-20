@@ -57,7 +57,7 @@ a{
 .booking-btn{
     padding: 14px 29px;
     line-height: 16px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     border-radius: 3px;
     background-color: #0071ba;
@@ -121,7 +121,7 @@ nav{
 }
 
 .nav__link--anchor{
-    font-size: 16px;
+    font-size: 14px;
     color: rgb(128, 126, 126);
     font-weight: 700;
 }
@@ -868,6 +868,11 @@ padding-left: 24px;
     #personal-logo{
         width: 240px;
     }
+}
+
+
+@media(max-width:890px){
+    
 }
 
 @media(max-width:690px){

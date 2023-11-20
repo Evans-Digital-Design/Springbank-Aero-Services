@@ -6,69 +6,6 @@ include("functions.php");
 
 
 
-// $errors[] = "";
-// if($_SERVER['REQUEST_METHOD'] == 'POST')
-// {   
-
-//     $image = basename($_FILES["image"]["name"]);
-//     $folder = "assets/products/".$image;
-//     $fileType = pathinfo($folder,PATHINFO_EXTENSION);
-    
-    
-
-    //something was posted
-    // $title = mysqli_real_escape_string($con, $_POST['title']);
-    // $description = mysqli_real_escape_string($con, $_POST['description']);
-    // $original_price = mysqli_real_escape_string($con, $_POST['original_price']);
-    // $tax = mysqli_real_escape_string($con, $_POST['tax']);
-    // $selling_price = mysqli_real_escape_string($con, $_POST['selling_price']);
-    // $quantity = mysqli_real_escape_string($con, $_POST['quantity']);
-    
-
-//     if(!empty($title)
-//     && !empty($description)
-//     && !empty($original_price)
-//     && !empty($tax)
-//     && !empty($selling_price)
-//     && !empty($quantity))
-//     {
-
-//     if(move_uploaded_file($_FILES["image"]["tmp_name"], $folder)){
-//       //save to database
-//       $query = "insert into products (
-//         title,
-//         description,
-//         original_price,
-//         tax,
-//         selling_price,
-//         quantity,
-//         image
-//         ) values (
-//             '$title',
-//             '$description',
-//             '$original_price',
-//             '$tax',
-//             '$selling_price',
-//             '$quantity,
-//             '".$image."'
-//             )";
-//       mysqli_query($con, $query);
-
-//     }
-//       header("Location: admin-products.php");
-//       die;
-//     }
-//     else
-//     {
-//       $errors[] = "Invalid submission. Make sure all fields are filled out.";
-      
-//     }
-    
-     
-  
-//  }
-
-
 $statusMsg[] = ''; 
 $errors[] = "";
 // File upload directory 
@@ -87,12 +24,6 @@ if(isset($_POST["submit"])){
         $quantity = mysqli_real_escape_string($con, $_POST['quantity']);
 
 
-        // $title = $_POST['title'];
-        // $description = $_POST['description'];
-        // $original_price = $_POST['original_price'];
-        // $tax = $_POST['tax'];
-        // $selling_price = $_POST['selling_price'];
-        // $quantity = $_POST['quantity'];
      
         // Allow certain file formats 
         $allowTypes = array('jpg','png','jpeg','gif'); 
@@ -144,7 +75,7 @@ calculate = function()
 {
     var price = document.getElementById('price').value;
 
-    document.getElementById('price').value = formatter.format(parseFloat(price));
+    document.getElementById('price').value = parseFloat(price)*100;
 
     
 }
@@ -319,7 +250,7 @@ calculate = function()
         </div>
 
         <div class="form-floating form__input-group ">
-            <input id="price" onblur=" calculate()" type="text" class="form__input w-50 " name="selling_price" autofocus placeholder="Price ($)">
+            <input id="price" type="text"onblur="calculate()" class="form__input w-50 " name="selling_price" autofocus placeholder="Price ($)">
             <div class="form__input-error-message"></div>
         </div>
 

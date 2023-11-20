@@ -8,6 +8,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CartProductController;
 use App\Http\Controllers\ProductShowController;
 
@@ -44,7 +45,8 @@ Route::post('/cart/products/', [CartProductController::class, 'store'])->name('c
 Route::delete('/cart/products/{product:title}', [CartProductController::class, 'destroy'])->name('cart.products.destroy');
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
-
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+// Route::get('/index2', [CartController::class, 'index2'])->name('cart.index');
 
 
 require __DIR__.'/auth.php';

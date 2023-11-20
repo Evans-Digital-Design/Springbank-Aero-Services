@@ -69,11 +69,17 @@ include("functions.php");
                     link__hover-effect--black">Services</a>
                 </li>
                 <li class="nav__link">
+                    <a href="/products" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black">Store</a>
+                </li>
+                <!-- <li class="nav__link">
                     <a href="detailing.html" class="
                      nav__link--anchor
                      link__hover-effect
-                     link__hover-effect--black">Detailing</a>
-                </li>
+                     link__hover-effect--black">Detailing</a> -->
+                <!-- </li> -->
                 <li class="nav__link">
                     <a href="./indexNews.php" class="
                     nav__link--anchor
@@ -106,7 +112,8 @@ include("functions.php");
                     <li><a href="./index1.php" class="menu__link menu__link--a">Home</a></li>
                     <li><a href="./indexAbout.html" class="menu__link menu__link--a">About</a></li>
                     <li><a href="./indexServices.php" class="menu__link menu__link--a">Services</a></li>
-                    <li><a href="detailing.html" class="menu__link menu__link--a">Detailing</a></li>
+                    <!-- <li><a href="detailing.html" class="menu__link menu__link--a">Detailing</a></li> -->
+                    <li><a href="/products" class="menu__link menu__link--a">Store</a></li>
                     <li><a href="./indexNews.php" class="menu__link menu__link--a">News & Events</a></li>
                     <li><a href="./indexContact.html" class="menu__link menu__link--a">Contact Us</a></li>
                     <li><a href="/bookings/create" class="menu__link menu__link--a">Book fuel</a></li>
@@ -160,17 +167,21 @@ include("functions.php");
 
 </div>
         <section id="about-us">
-            <h2 class="about-us__title">About Us</h2>
+            <h2 class="about-us__title">About Springbank Aero Services inc.</h2>
             <div class="about-us--content">
                 <figure class="about__img--container">
                     <img class="about__img" src="./assets/about-us--img.jpg" alt="Helicopter Outside Springbank Aero Services">
                 </figure>
                 <div class="about-us__detail">
-                    <p class="about-us--para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem amet
-                        praesentium exercitationem
-                        ratione vero. Fuga expedita obcaecati quam nisi, quos natus eos asperiores temporibus impedit
-                        eius vel labore itaque saepe.</p>
-                    <a href="./indexAbout.html"><button class="about__btn service__btn">More About Us!</button></a>
+                    <p class="about-us--para">Founded in 1999 as a flight training center at Springbank Airport, Springbank Aero Services Inc. 
+                        has evolved over the years to become a trusted Full Service Fixed Base
+                         Operator (FBO). We are a family-owned and operated business, with a 
+                         long-standing commitment to serving the aviation community. In 2014,
+                          we transitioned from our flight training center roots to provide 
+                          comprehensive FBO services to local, national, and international 
+                          clients.
+                    </p>
+                    <a href="./indexAbout.html"><button class="about__btn service__btn">More About Us !</button></a>
             </div>
         </section>
 

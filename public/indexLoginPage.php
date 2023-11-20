@@ -83,11 +83,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                     link__hover-effect--black">Services</a>
                 </li>
                 <li class="nav__link">
+                    <a href="/products" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black">Store</a>
+                </li>
+                <!-- <li class="nav__link">
                     <a href="#" class="
                      nav__link--anchor
                      link__hover-effect
                      link__hover-effect--black">Detailing</a>
-                </li>
+                </li> -->
                 <li class="nav__link">
                     <a href="./indexNews.html" class="
                     nav__link--anchor
@@ -120,7 +126,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                     <li><a href="./index1.php" class="menu__link menu__link--a">Home</a></li>
                     <li><a href="./indexAbout.html" class="menu__link menu__link--a">About</a></li>
                     <li><a href="./indexServices.php" class="menu__link menu__link--a">Services</a></li>
-                    <li><a href="#" class="menu__link menu__link--a">Detailing</a></li>
+                    <!-- <li><a href="#" class="menu__link menu__link--a">Detailing</a></li> -->
                     <li><a href="./indexNews.html" class="menu__link menu__link--a">News & Events</a></li>
                     <li><a href="./indexContact.html" class="menu__link menu__link--a">Contact Us</a></li>
                     <li><a href="/bookings/create" class="menu__link menu__link--a">Book fuel</a></li>

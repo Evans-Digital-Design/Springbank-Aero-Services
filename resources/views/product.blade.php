@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>springbank Aero - Products</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -51,11 +51,17 @@
                         link__hover-effect--black">Services</a>
                     </li>
                     <li class="nav__link">
+                        <a href="/products" class="
+                        nav__link--anchor
+                        link__hover-effect
+                        link__hover-effect--black">Store</a>
+                    </li>
+                    {{-- <li class="nav__link">
                         <a href="{{ asset('detailing.html')}}" class="
                          nav__link--anchor
                          link__hover-effect
                          link__hover-effect--black">Detailing</a>
-                    </li>
+                    </li> --}}
                     <li class="nav__link">
                         <a href="{{ asset('indexNews.php') }}" class="
                         nav__link--anchor
@@ -88,7 +94,7 @@
                         <li><a href="{{ asset('index1.php') }}" class="menu__link menu__link--a">Home</a></li>
                         <li><a href="{{ asset('indexAbout.html') }}" class="menu__link menu__link--a">About</a></li>
                         <li><a href="{{ asset('indexServices.php') }}" class="menu__link menu__link--a">Services</a></li>
-                        <li><a href="{{ asset('detailing.html')}}" class="menu__link menu__link--a">Detailing</a></li>
+                        {{-- <li><a href="{{ asset('detailing.html')}}" class="menu__link menu__link--a">Detailing</a></li> --}}
                         <li><a href="{{ asset('indexNews.php') }}" class="menu__link menu__link--a">News & Events</a></li>
                         <li><a href="{{ asset('indexContact.html') }}" class="menu__link menu__link--a">Contact Us</a></li>
                         <li><a href="{{ asset('indexLoginPage.php') }}" class="menu__link menu__link--a ">Login</a></li>
@@ -103,24 +109,22 @@
             {{ __('Products') }}
         </h2>
     </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                @foreach ($products as $product)
-                <a href="{{route('products.show', $product)}}" class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
-                    <h1 class="txt-lg font-semibold mb-2">{{$product->title}}</h1>
-                    <figure>
-                    <img class="w-5 " src="{{asset('storage/'.$product->image)}}" alt="">
-                    </figure>
-                    <div>${{$product->selling_price}}</div>
-                    <p>{{$product->description}}</p>
-                </a>
-                
-                @endforeach
-            </div>
-
-        </div>
+<div class="py-12"></div>
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        @foreach ($products as $product)
+            <a href="{{ route('products.show', $product) }}" class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
+                <h1 class="text-xl font-semibold mb-2">{{ $product->title }}</h1>
+                <figure class="mb-4">
+                    <img class="w-full h-56 object-fit" src="{{ asset('storage/'.$product->image) }}" alt="{{ $product->title }}">
+                </figure>
+                <div class="text-lg font-bold mb-2">@money($product->selling_price, 'CAD')</div>
+                <p class="text-sm">{{ $product->description }}</p>
+            </a>
+        @endforeach
+    </div>
+</div>
+</div>
     </div>
 </x-app-layout>
 <footer>

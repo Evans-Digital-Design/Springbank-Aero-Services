@@ -51,11 +51,17 @@
                         link__hover-effect--black">Services</a>
                     </li>
                     <li class="nav__link">
+                        <a href="/products" class="
+                        nav__link--anchor
+                        link__hover-effect
+                        link__hover-effect--black">Store</a>
+                    </li>
+                    {{-- <li class="nav__link">
                         <a href="{{ asset('detailing.html')}}" class="
                          nav__link--anchor
                          link__hover-effect
                          link__hover-effect--black">Detailing</a>
-                    </li>
+                    </li> --}}
                     <li class="nav__link">
                         <a href="{{ asset('indexNews.php') }}" class="
                         nav__link--anchor
@@ -109,11 +115,11 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
                     <h1 class="txt-lg font-semibold mb-2">{{$product->title}}</h1>
-                    <figure>
-                    <img class="w-5 " src="{{asset('storage/'.$product->image)}}" alt="">
+                    <figure class="mb-4">
+                        <img class="w-full h-72 object-fit" src="{{ asset('storage/'.$product->image) }}" alt="{{ $product->title }}">
                     </figure>
-                    <div>${{$product->selling_price}}</div>
-                    <p>{{$product->description}}</p>
+                    <div class="text-lg font-bold mb-2">@money($product->selling_price, 'CAD')<div>
+                    <p class="text-sm">{{ $product->description }}</p>
 
                     <form action="{{route('cart.products.store')}}" method="post">
                     @csrf

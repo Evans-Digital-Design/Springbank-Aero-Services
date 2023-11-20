@@ -9,6 +9,9 @@
 <body>
     Hi your appointment has been confirmed. Please see the details below:
     <br>
-    <strong>{{$data->service->name}} ({{$data->service->duration}} minutes) at the aircraft location : {{$appointment->aircraft_location}}</strong>
-</body>
+    <br>
+
+    Service :{{$appointment->service->name}} ({{$appointment->service->duration}} minutes) at ({{$appointment->start_time}}) to ({{$appointment->end_time}})
+    Aircraft Location : {{$appointment->aircraft_location}}
+    Aircraft Identifier :{{$appointment->aircraft_identifier}}</body>
 </html>

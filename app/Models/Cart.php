@@ -19,21 +19,13 @@ class Cart extends Model
         return $this->where('session_id', session()->getId());
     }
 
-    public function totalBefore()
-    {
-        return $this->products->sum('selling_price');
-    }
+
 
     public function total()
     {   
-        $tax = $this->products->sum('selling_price')*0.05;
-        return $this->products->sum('selling_price')+ $tax;
+        return $this->products->sum('selling_price');
     }
 
-    public function totalTax()
-    {
-        return $this->products->sum('selling_price')*0.05;
-    }
 
     public function products()
     {

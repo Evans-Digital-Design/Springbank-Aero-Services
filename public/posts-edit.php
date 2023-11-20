@@ -214,7 +214,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                     <div class="row g-0 border rounded overflow-hidden flex-md-row 
                     m-auto mb-4 shadow-sm h-md-250 position-relative ">
                         <div class="col p-4 d-flex flex-column position-static">
-                            <strong class="d-inline-block mb-2 text-success">Design</strong>
+                            
                             <h3 class="mb-0"><?php if (isset($post_data['title'])): ?>
                                         <?php echo $post_data['title'];?>
                                     <?php endif; ?></h3>

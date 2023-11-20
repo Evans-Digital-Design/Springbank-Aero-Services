@@ -2,9 +2,17 @@
 
 namespace App\Providers;
 
+
 use App\Models\Cart;
+use Akaunting\Money\Money;
+use Laravel\Cashier\Cashier;
+use Akaunting\Money\Currency;
+
 use Illuminate\Support\Facades\View;
+use Money\Curriencies\ISOCurrencies;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Money\Formatter\IntlMoneyFormatter;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,5 +36,7 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function($view){
             $view->with('cart', Cart::bySession()->first());
         });
+
+       
     }
 }
