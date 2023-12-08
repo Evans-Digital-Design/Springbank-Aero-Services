@@ -27,6 +27,7 @@ $user_data2 = mysqli_fetch_assoc($result2);
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesServices.css">
     <script src="./index.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -116,37 +117,66 @@ $user_data2 = mysqli_fetch_assoc($result2);
     <div class="service">
         <section id="services">
             <h2 class="services__title">Services</h2>
-            <ul class="services__list">
-                <li class="services__list--item">
-                    Fuel Services</li>
-                <li class="services__list--item">- Avgas 100LL</li>
-                <li class="services__list--item">- Jet A-1</li>
-                <li class="services__list--item">- Jet A-1 +</li>
-                <a href="/bookings/create"><button class="booking__btn">Book fuel</button></a>
-                <br>
-                <br>
-                <li class="services__list--item">Ramp Parking (Daily and Monthly)</li>
-                <li class="services__list--item">Hangar Parking (Daily and Monthly)</li>
-                <br>
-                <li class="services__list--item">Aviation Oil</li>
-                <li class="services__list--item">- 15W50</li>
-                <li class="services__list--item">- 20W50</li>
-                <li class="services__list--item">- W80</li>
-                <li class="services__list--item">- W100</li>
-                <br>
-                <li class="services__list--item">Aviation Oxygen</li>
-                <li class="services__list--item">Aircraft Towing and Recovery</li>
-                <li class="services__list--item">Plug IN</li>
-                <li class="services__list--item">GPU</li>
-                <li class="services__list--item">LAV</li>
-                <li class="services__list--item">Call out(in effect for services requested outside operating hours) $150</li>
-                <br>
-                <li class="services__list--item">Congierce Services (Travel Arrangements, Catering Arrangements)</li>
-                <li class="services__list--item">Detailing</li>
-                <li class="services__list--item">Snow Removal</li>
-                <li class="services__list--item">Rental Cars (Drop off location for Enterprise)</li>
-            </ul>
-            
+        
+        <section class="swSec" >
+            <div class="container-fluid">
+                <div class="service_co row d-flex">
+                    <figure class=" sec_img" >
+                        <img src="assets/slider/ism/image/slides/plane.jpg" alt="" class="w-100 h-100" >
+                        
+                    </figure>
+
+                    <div class=" sec_para ">
+                        <div class="fwSecCnt" style="width:100; padding: 75px 50px;">
+                            <h2 style="color: #0071ba;">General Services</h2>
+                            <p style="font-weight: 500; line-height: 2;">Springbank Aero Services is dedicated to deliver all your aviation needs for general, charter, and all other private aviation needs.
+                                 These services include</p>
+                            <ul class="services__list">
+                                <li class="services__list--item">-Fuel: Jet A-1, Jet A-1+, Avgas 100LL</li>
+                                <li class="services__list--item">-Parking: Ramp, Hangar</li>
+                                <li class="services__list--item">-Aviation Oil</li>
+                                <li class="services__list--item">-Aviation Oxygen</li>
+                                <li class="services__list--item">-Aircraft Handling</li>
+                                <li class="services__list--item">-GPU</li>
+                                <li class="services__list--item">-LAV</li>
+                                <li class="services__list--item">-Cabin Heat</li>
+                            </ul>
+                            <a href="/bookings/create"><button class="booking__btn">BOOK FUEL SERVICE</button></a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>   
+
+
+        <section class="swSec" style="padding: 48px;">
+            <div class="container-fluid">
+                <div class="row d-flex service_co">
+                    <figure class="sec_img order-1 order-md-2">
+                                <img src="assets/slider/ism/image/slides/landscape1.jpg" alt="" class="w-100 h-100">
+                    </figure>
+                    
+
+                    <div class="sec_para order-2 order-lg-1">
+                        <div class="fwSecCnt" style="width:100; padding: 75px 50px;">
+                            <h2 style="color: #0071ba;">Other Services</h2>
+                            <p style="font-weight: 500; line-height: 2;">Our team is commited to providing the utmost customer service and seeing to all your customer needs, including:</p>
+                            <ul class="services__list">
+                                <li class="services__list--item">-Concierge Services</li>
+                                <li class="services__list--item">-Catering Services</li>
+                                <li class="services__list--item">-Aircraft and Automotive Detailing</li>
+                                <li class="services__list--item">-Snow Clearing</li>
+                                <li class="services__list--item">-Rental Cars</li>
+                            </ul>
+                            <p style="font-weight: 500; line-height: 2;">For any other Customer Service needs pleae call our office at 403-247-8833.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         </section>
         <section id="fuelPrices">
             <h2 class="fuelPrices__title">Fuel Prices</h2>
