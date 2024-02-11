@@ -86,7 +86,7 @@ class CreateBooking extends Component
 
     public function sendOrderConfirmationMail($appointment)
     {
-        Mail::to('jasneetpalsingh@gmail.com')->queue(new OrderMail($appointment));
+        Mail::to('general@springbankaero.com')->queue(new OrderMail($appointment));
     }
      public function sendOrderConfirmationMailForEmployer($appointment)
     {
